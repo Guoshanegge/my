@@ -1,0 +1,12 @@
+SET NAMES UTF8;
+DROP DATABASE IF EXISTS lovelycat;
+CREATE DATABASE lovelycat CHARSET=UTF8;
+USE usercat£»
+CREATE TABLE usercat(
+  cname INT primary key auto_increment,
+  cpwd VARCHAR(20) unique)
+  INSERT INTO usercat VALUE("ÖÜ½ÜÂ×","123");
+  INSERT INTO usercat VALUE("ÖÜÂ×","128");
+  INSERT INTO usercat VALUE("ÖÜ½Ü","129");
+
+  

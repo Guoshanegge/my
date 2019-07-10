@@ -1,0 +1,929 @@
+﻿*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #efefef;
+	font-family: "Microsoft YaHei";
+}
+
+/*头部 背景 logo 导航 登录注册 品种 地区 head_box*/
+#head_box{
+	width: 100%;
+	height: 1035px;
+	/*border: 1px solid red;*/
+	/*border-bottom: 1px solid red;*/
+}
+
+/*头部背景 导航 head_bg_nav*/
+#head_box #head_bg_nav{
+	width: 100%;
+	height: 660px;
+	/*border: 1px solid red;*/
+	position: relative;
+}
+
+/*轮播图 flash_box*/
+#head_box #head_bg_nav #flash_box{
+	width: 100%;
+	height: 660px;
+	/*border: 1px solid red;*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	/*background: #fff;*/
+	z-index: -99999;
+}
+#head_box #head_bg_nav #flash_box .img_flash{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -999;
+	display: none;
+}
+
+#head_box #head_bg_nav .logo_img{
+	width: 1240px;
+	height: 125px;
+	padding-top: 125px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+	position: relative;
+}
+
+#head_box #head_bg_nav .logo_img >img{
+	display: block;
+	width: 494px;
+	height: 123px;
+	margin: 0 auto;
+	/*margin-top: 125px;*/
+}
+
+/*登录注册发布信息 login_join*/
+#head_box #head_bg_nav .logo_img .login_join{
+	width: 220px;
+	height: 40px;
+	/*border: 1px solid red;*/
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	line-height: 40px;
+	/*position: relative;*/
+}
+
+#head_box #head_bg_nav .logo_img .login_join> a{
+	margin-left: 17px; 
+	text-decoration: none;
+	font-size: 16px;
+	color: #000;
+}
+
+#head_box #head_bg_nav .logo_img .login_join> a:hover{
+	color: #fd871d;
+	font-size: 18px;
+}
+
+/*登录完成状态success_state*/
+#head_box #head_bg_nav .logo_img .login_join #success_state{
+	width: 125px;
+	height: 40px;
+	/*border: 1px solid red;*/
+	float: left;
+	text-align: center;
+	color: #000;
+	font-size: 16px;
+	overflow: hidden;
+	white-space: nowrap;
+    	text-overflow: ellipsis;
+}
+
+#head_box #head_bg_nav .logo_img .login_join #success_state:hover{
+	color: #fd871d;
+	font-size: 18px;
+}
+
+/*登录完成下拉选项*/
+#head_box #head_bg_nav .logo_img .login_join #sel_option{
+	width: 125px;
+	height: 0px;
+	/*border: 1px solid red;*/
+	position: absolute;
+	left: 0;
+	top: 40px;
+	background: rgba(255,255,255,0.5);
+	/*display: none;*/
+	overflow: hidden;
+}
+
+#head_box #head_bg_nav .logo_img .login_join #sel_option li{
+	width: 100%;
+	height: 34px;
+	/*border: 1px solid red;*/
+	list-style: none;
+	text-align: center;
+	line-height: 34px;
+}
+
+#head_box #head_bg_nav .logo_img .login_join #sel_option li a{
+	text-decoration: none;
+	color: #333333;
+	font-size: 14px;
+}
+
+#head_box #head_bg_nav .logo_img .login_join #sel_option li a:hover{
+	color: #fd871d;
+	text-decoration: underline;
+}
+
+/*导航栏 nav_box*/
+#head_box #head_bg_nav .nav_box{
+	width: 60%;
+	height: 50px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+	border-bottom: 4px solid #efefef;
+	/*border-radius: 10px;*/
+	margin-top: 90px;
+}
+
+#head_box #head_bg_nav .nav_box .nav_box_cen{
+	width: 90%;
+	height: 100%;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+}
+
+#head_box #head_bg_nav .nav_box .nav_box_cen li{
+	list-style: none;
+	float: left;
+	width: 14.2%;
+	height: 40px;
+	/*border: 1px solid red;*/
+	line-height: 40px;
+	text-align: center;
+}
+
+#head_box #head_bg_nav .nav_box .nav_box_cen li a{
+	text-decoration: none;
+	font-size: 24px;
+	color: #000;
+}
+
+#head_box #head_bg_nav .nav_box .nav_box_cen li:hover a{
+	font-size: 28px;
+	color: #fd871d;
+}
+
+/*底部品种 城市筛选 foot_box*/
+#head_box #foot_box{
+	width: 100%;
+	height: 369px;
+	background: #efefef;
+	border-top: 1px solid #efefef;
+	/*position: relative;*/
+	/*border: 1px solid red;*/
+}
+
+#head_box #foot_box #breeds_citys{
+	width: 1200px;
+	height: 410px;
+	border: 1px solid #efefef;
+	margin: 0 auto;
+	margin-top: -80px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.2);
+	position: relative;
+}
+
+#head_box #foot_box #breeds_citys .top_box{
+	width: 100%;
+	height: 78px;
+	border-bottom: 1px solid #dcdcdc;
+	position: relative;
+}
+
+#head_box #foot_box #breeds_citys .top_box .cat_breeds{
+	width: 600px;
+	height: 78px;
+	line-height: 78px;
+	text-align: center;
+	border-right: 1px solid #dcdcdc;
+	font-size: 24px;
+	/*font-weight: 500;*/
+	color: #fd871d;
+}
+
+#head_box #foot_box #breeds_citys .top_box .citys_region{
+	width: 599px;
+	height: 78px;
+	line-height: 78px;
+	text-align: center;
+	font-size: 24px;
+	/*border: 1px solid red;*/
+	/*font-weight: 500;*/
+	color: #fd871d;
+	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/*猫咪品种列表 cat_list*/
+#head_box #foot_box #breeds_citys .cat_list{
+	width: 600px;
+	height: 320px;
+	/*border: 1px solid red;*/
+}
+
+#head_box #foot_box #breeds_citys .cat_list ul{
+	margin-top: 40px;
+	margin-left: 72px;
+}
+
+#head_box #foot_box #breeds_citys .cat_list ul li{
+	list-style: none;
+	width: 103px;
+	height: 20px;
+	/*border: 1px solid red;*/
+	float: left;
+	line-height: 20px;
+	text-align: center;
+	margin-right: 70px;
+	margin-bottom: 18px;
+}
+
+#head_box #foot_box #breeds_citys .cat_list ul li a{
+	text-decoration: none;
+	font-size: 16px;
+	color: #333333;
+}
+
+#head_box #foot_box #breeds_citys .cat_list ul li a:hover{
+	color: #fd871d;
+}
+
+/*城市列表city_list*/
+#head_box #foot_box #breeds_citys .city_list{
+	width: 600px;
+	height: 320px;
+	/*border: 1px solid red;*/
+	position: absolute;
+	right: 0;
+	bottom: 9px;
+}
+
+#head_box #foot_box #breeds_citys .city_list ul{
+	margin-top: 40px;
+	margin-left: 75px;
+}
+
+#head_box #foot_box #breeds_citys .city_list ul li{
+	list-style: none;
+	width: 65px;
+	height: 20px;
+	/*border: 1px solid red;*/
+	float: left;
+	line-height: 20px;
+	text-align: center;
+	margin-right: 30px;
+	margin-bottom: 18px;
+}
+
+#head_box #foot_box #breeds_citys .city_list ul li a{
+	text-decoration: none;
+	font-size: 16px;
+	color: #333333;
+}
+
+#head_box #foot_box #breeds_citys .city_list ul li a:hover{
+	color: #fd871d;
+}
+
+
+/*热门广告位 hot_adv*/
+#hot_adv{
+	width: 100%;
+	height: 754px;
+	border-top: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+	background: #efefef;
+}
+
+#hot_adv .top_name{
+	width: 580px;
+	height: 88px;
+	/*border: 1px solid red;*/
+	text-align: center;
+	line-height: 88px;
+	font-size: 48px;
+	color: #fd871d;
+	margin: 0 auto;
+}
+
+#hot_adv .top_name img{
+	/*border: 1px solid red;*/
+	height: 5px;
+	width: 180px;
+	margin-top: 41px;
+}
+
+#hot_adv .top_name img.left{
+	float: left;
+}
+
+#hot_adv .top_name img.right{
+	float: right;
+}
+
+#hot_adv .adv_list{
+	width: 1846px;
+	height: 620px;
+	background: #fff;
+	border-top: 1px solid #fff;
+	margin: 20px auto;
+	border-radius: 15px;
+}
+
+#hot_adv .adv_list ul{
+	margin-left: 157px;
+	margin-top: 42px;
+}
+
+#hot_adv .adv_list ul li{
+	list-style: none;
+	float: left;
+	width: 275px;
+	height: 506px;
+	/*border: 1px solid red;*/
+	margin-left: 26px;
+	position: relative;
+}
+
+#hot_adv .adv_list ul li p.top_info{
+	width: 100%;
+	height: 35px;
+	/*border: 1px solid red;*/
+	text-align: center;
+	line-height: 35px;
+	font-size: 24px;
+	color: #333333;
+}
+
+#hot_adv .adv_list ul li:hover p.top_info{
+	color: #fd871d;
+}
+
+#hot_adv .adv_list ul li .adv_info{
+	display: block;
+	text-decoration: none;
+	width: 100%;
+	height: 460px;
+	/*border: 1px solid green;*/
+	margin-top: 7px;
+	position: relative;
+	border-radius: 15px;
+	/*overflow: hidden;*/
+}
+
+#hot_adv .adv_list ul li .adv_info .bg_img{
+	/*border: 1px solid red;*/
+	width: 315px;
+	height: 520px;
+	position: absolute;
+	left: -19px;
+	top: -33px;
+}
+
+#hot_adv .adv_list ul li .adv_info .adv_img{
+	width: 100%;
+	height: 236px;
+	border-radius: 15px;
+}
+
+#hot_adv .adv_list ul li .adv_info .adv_title{
+	width: 245px;
+	height: 180px;
+	/*border: 1px solid red;*/
+	margin: 10px auto;
+	font-size: 16px;
+	color: #333333;
+	line-height: 24px;
+	overflow: hidden;
+}
+
+/*每个品种的产品列表 breeds_Product_box*/
+.breeds_Product_box{
+	width: 1846px;
+	height: 505px;
+	background: #fff;
+	border-top: 1px solid #fff;
+	margin: 0px auto;
+	border-radius: 15px;
+	margin-bottom: 25px;
+}
+
+.breeds_Product_box .top_name{
+	width: 550px;
+	height: 88px;
+	/*border: 1px solid red;*/
+	text-align: center;
+	line-height: 88px;
+	font-size: 24px;
+	color: #fd871d;
+	margin: 0 auto;
+	font-weight: bold;
+}
+
+.breeds_Product_box .top_name .left_bg{
+	width: 180px;
+	height: 4px;
+	/*border: 1px solid red;*/
+	float: left;
+	margin-top: 41px;
+	background: -webkit-linear-gradient(left,white,#F3C9A4,#fd871d);
+}
+
+.breeds_Product_box .top_name .right_bg{
+	width: 180px;
+	height: 4px;
+	/*border: 1px solid red;*/
+	float: right;
+	margin-top: 41px;
+	background: -webkit-linear-gradient(right,white,#F3C9A4,#fd871d);
+}
+
+.breeds_Product_box ul{
+	margin-left: 225px;
+	margin-top: 5px;
+}
+
+.breeds_Product_box ul li{
+	width: 250px;
+	height: 405px;
+	/*border: 1px solid red;*/
+	float: left;
+	list-style: none;
+	margin-right: 34px;
+}
+
+.breeds_Product_box ul li .product_link{
+	text-decoration: none;
+	display: block;
+	width: 240px;
+	height: 260px;
+	/*border: 1px solid red;*/
+	border-radius: 15px;
+	margin: 0 auto;
+	margin-top: 8px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.2);
+}
+
+.breeds_Product_box ul li .product_link .img_show{
+	width: 100%;
+	height: 100%;
+}
+
+.breeds_Product_box ul li .product_link .title_show{
+	width: 100%;
+	height: 40px;
+	/*border: 1px solid red;*/
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.3);
+}
+
+.breeds_Product_box ul li .product_link .title_show p{
+	width: 90%;
+	height: 40px;
+	line-height: 20px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+	font-size: 14px;
+	color: #fff;
+	overflow: hidden;
+}
+
+.breeds_Product_box ul li .price{
+	width: 100%;
+	height: 40px;
+	/*border: 1px solid red;*/
+	text-align: center;
+	line-height: 40px;
+	font-size: 24px;
+	color: #fd871d;
+	margin-top: 10px;
+}
+
+.breeds_Product_box ul li .city{
+	width: 100%;
+	height: 30px;
+	/*border: 1px solid red;*/
+	line-height: 30px;
+	text-align: center;
+	font-size: 15px;
+	color: #000000;
+	font-weight: bold;
+	margin-top: 6px;
+}
+
+.breeds_Product_box ul li .update_time{
+	width: 100%;
+	height: 30px;
+	/*border: 1px solid red;*/
+	font-size: 13px;
+	text-align: center;
+	line-height: 30px;
+	color: #B018B9;
+}
+
+/*每个品种的产品列表 each_breeds_list*/
+#each_breeds_list{
+	width: 1846px;
+	height: 3220px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 15px;
+}
+
+#each_breeds_list .goods_list{
+	width: 580px;
+	height: 435px;
+	/*border: 1px solid red;*/
+	float: left;
+	margin-left: 25px;
+	margin-top: 22px;
+}
+
+/*头部品种名称 热门城市 top_name_citys*/
+#each_breeds_list .goods_list .top_name_citys{
+	width: 100%;
+	height: 50px;
+	background: #eeeeee;
+	border-radius: 10px;
+}
+
+#each_breeds_list .goods_list .top_name_citys .breeds_name{
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	/*border: 1px solid red;*/
+	font-size: 18px;
+	color: #fd871d;
+	font-weight: bold;
+	text-indent: 15px;
+	float: left;
+}
+
+#each_breeds_list .goods_list .top_name_citys .breeds_name a{
+	text-decoration: none;
+	color: #000;
+}
+
+#each_breeds_list .goods_list .top_name_citys .breeds_name:hover a{
+	color: #fd871d;
+}
+
+#each_breeds_list .goods_list .top_name_citys .hot_citys{
+	width: 280px;
+	height: 50px;
+	line-height: 50px;
+	/*border: 1px solid red;*/
+	float: right;
+}
+
+#each_breeds_list .goods_list .top_name_citys .hot_citys a{
+	text-decoration: none;
+	font-size: 14px;
+	color: #333333;
+	margin-left: 5px;
+	/*border: 1px solid red;*/
+}
+
+#each_breeds_list .goods_list .top_name_citys .hot_citys a:hover{
+	font-size: 16px;
+	color: #fd871d;
+}
+
+
+#each_breeds_list .goods_list li{
+	list-style: none;
+	width: 540px;
+	height: 22px;
+	line-height: 22px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+	margin-top: 15px;
+}
+
+#each_breeds_list .goods_list li .post_title{
+	color: #333333;
+	font-size: 14px;
+	width: 380px;
+	height: 22px;
+	line-height: 22px;
+	/*border: 1px solid red;*/
+	overflow: hidden;
+	white-space: nowrap;
+    	text-overflow: ellipsis;
+    	float: left;
+}
+
+#each_breeds_list .goods_list li .post_title a{
+	text-decoration: none;
+	color: #333333;
+}
+
+#each_breeds_list .goods_list li .post_title:hover a{
+	color: #fd871d;
+}
+
+#each_breeds_list .goods_list li .price{
+	float: right;
+	font-size: 14px;
+	color: #333333;
+}
+
+#each_breeds_list .goods_list li .price span{
+	font-size: 16px;
+	color: #fd871d;
+}
+
+/*新闻资讯 cat_news*/
+#cat_news{
+	width: 100%;
+	height: 50px;
+	background: #fd871d;
+	border-top: 1px solid #fd871d;
+	margin-top: 48px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 24px;
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+
+#cat_news .left_bg{
+	width: 45%;
+	height: 1px;
+	background: #fff;
+	margin-top: 24px;
+	float: left;
+}
+
+#cat_news .right_bg{
+	width: 45%;
+	height: 1px;
+	background: #fff;
+	margin-top: 24px;
+	float: right;
+}
+
+/*新闻资讯列表news_list*/
+#news_list{
+	width: 1200px;
+	height: 470px;
+	border-top: 1px solid #fff;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.2);
+	position: relative;
+}
+
+#news_list ul{
+	margin-top: 57px;
+}
+
+#news_list ul li{
+	width: 595px;
+	height: 25px;
+	/*border: 1px solid red;*/
+	list-style: none;
+	float: left;
+	margin-bottom: 10px;
+}
+
+#news_list ul li a{
+	text-decoration: none;
+	display: block;
+	width: 432px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	color: #333333;
+	/*border: 1px solid red;*/
+	margin: 0 auto; 
+}
+
+#news_list ul li a p{
+	width: 300px;
+	/*border: 1px solid red;*/
+	height: 25px;
+	overflow: hidden;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+#news_list ul li a span{
+	float: right;
+}
+
+#news_list ul li a:hover p{
+	color: #fd871d;
+}
+
+#news_list ul li a:hover span{
+	color: #fd871d;
+}
+
+#news_list #cen_line{
+	width: 1px;
+	height: 370px;
+	background: #ddd;
+	position: absolute;
+	left: 599px;
+	top: 47px;
+}
+
+/*扫一扫添加微信 add_wechat*/
+#add_wechat{
+	width: 1200px;
+	height: 165px;
+	border: 1px solid #fff;
+	margin: 30px auto;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.2);
+}
+
+#add_wechat .logo_img{
+	/*border: 1px solid red;*/
+	margin-left: 30px;
+	margin-top: 20px;
+	float: left;
+}
+
+#add_wechat .wechat_img{
+	width: 120px;
+	height: 120px;
+	/*border: 1px solid red;*/
+	float: left;
+	margin-left: 100px;
+	margin-top: 25px;
+}
+
+#add_wechat .wechat_img img{
+	display: block;
+	width: 82px;
+	height: 82px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+}
+
+#add_wechat .wechat_img p{
+	font-size: 14px;
+	color: #333333;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	/*border: 1px solid red;*/
+}
+
+#add_wechat .free_call{
+	width: 200px;
+	height: 105px;
+	/*border: 1px solid red;*/
+	float: left;
+	margin-left: 140px;
+	margin-top: 20px;
+}
+
+#add_wechat .free_call .up_title{
+	width: 100%;
+	height: 40px;
+	/*border: 1px solid red;*/
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	color: #333333;
+}
+
+#add_wechat .free_call .down_num{
+	width: 100%;
+	height: 40px;
+	/*border: 1px solid red;*/
+	text-align: center;
+	line-height: 40px;
+	font-size: 24px;
+	color: 00;
+}
+
+.clear{
+	clear: both;
+}
+
+/*友情链接 friend_link*/
+#friend_link{
+	width: 1200px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+}
+
+#friend_link .up_title{
+	width: 100%;
+	height: 35px;
+	border-bottom: 4px solid #fd871d;
+	font-size: 24px;
+	line-height: 35px;
+	color: #505050;
+	text-indent: 20px;
+}
+
+#friend_link li{
+	list-style: none;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	/*border: 1px solid red;*/
+
+}
+
+#friend_link li a{
+	text-decoration: none;
+	font-size: 18px;
+	color: #505050;
+	padding-right: 22px;
+	padding-left: 22px;
+}
+
+#friend_link li p{
+	float: right;
+	width: 1px;
+	height: 20px;
+	background: #505050;
+	margin-top: 5px;
+}
+
+#friend_link li a:hover{
+	color: #fd871d;
+	text-decoration: underline;
+}
+
+/*底部信息地址 备案foot_info*/
+#foot_info{
+	width: 100%;
+	height: 160px;
+	background: #666666;
+	margin-top: 50px;
+}
+
+#foot_info .info{
+	width: 100%;
+	height: 40px;
+	/*border: 1px solid #fff;*/
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+}
+
+#foot_info .Record{
+	width: 100%;
+	height: 40px;
+	/*border: 1px solid #fff;*/
+	line-height: 40px;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+}
+
+/*返回顶部*/
+#cli_top{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 200px;
+    bottom: 100px;
+    font-size: 10px;
+}
+
+#cli_top img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+
+
+
