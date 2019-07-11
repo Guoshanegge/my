@@ -1,27 +1,19 @@
 const express=require('express');
-const pool=require('../pool.js');
+const pool=require('../pool');
 var router=express();
-router.get("/user_login",function(req,res){
-	var $cname=req.query.cname;
-	var $cpwd=req.query.cpwd;
-	if(!$cname){
-	res.send("wendin");
-	return;
-	}
-	if(!$cpwd){
-	res.send("xxxxx");
-     return;
-	}
-	var sql="select * from usercat where cname=? and cpwd=?";
-	pool.query(sql,[$cname,$cpwd],function(err,result){
-	if(err) throw err;
-	if(result.length>0){
-	res.send("1");
-	}else{
-	res.send("0");
-	}
-	})
+router.get("/login/:cname&:cpwd&:phone&:email",function(req,res){
+  var $cname=req.params.cname;
+  var $cpwd=req.params.cpwd;
+  var $phone=req.params.phone;
+  var $email=req.params.email;
+  
+pool.query('SELECT cname,cpwd,phone,email FROM cat_user_login WHERE cname=? AND cpwd=? AND phone=? AND email=?',[$cname,$cpwd,$phone,$email],function(err,result){
+  if(err) throw err;
+  if(result.length>0){
+  res.send("1");
+  }else{
+  res.send("0");
+  }
+});
 })
-
- 
-module.exports=router;
+ module.exports=router;

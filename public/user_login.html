@@ -1,41 +1,54 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <script>
-  function lo(){
-	  var $cname=cname.value;
-	  var $cpwd=cpwd.value;
-  var xhr=new XMLHttpRequest();
- xhr.onreadystatechange=function(){
-   if(xhr.readyState==4&&xhr.status==200){
-     var result=xhr.responseText;
-	 if(result=="1"){
-	 alert("登录成功");
-	 }else if(result=="0"){
-	 alert("用户密码错误");
-	 }else{
-	 alert(result);
-	 }
-   }
- 
- 
- }
-  xhr.open("get","/user/user_login?cname="+$cname+"&cpwd="+$cpwd,true);
-  xhr.send(null);
-  
-  
-  
-  }
-  
-  
-  </script>
-  <title>Document</title>
- </head>
- <body>
-  用户名:<input type="text" id="cname"><br>
-  密码:<input type="text" id="cpwd"><br>
-  <button onclick="lo()">点我</button>
-
- </body>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	function user_login(){
+		
+	var $cname=cname.value;
+	var $cpwd=cpwd.value;
+	if($cname==""){
+	cname_span.innerHTML="用户名为空，请输入用户名"
+		 return;
+	}
+	if($cpwd==""){
+	cpwd_span.innerHTML="密码为空，重新输入密码"
+	return;
+	}
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+	  if(xhr.readyState==4&xhr.status==200){
+		 var result=xhr.responseText;
+		 if(result=="1"){
+		 alert("登陆成功")
+		 }else{
+		 alert("用户名或密码错误");
+		 }
+		}
+		
+	}
+	xhr.open("get","/user/v1/login/"+$cname+"&"+$cpwd,true);
+	xhr.send(null);
+	}
+	</script>
+</head>
+<body>
+	<h2>登录</h2>
+	<table><tr>
+		<td>用户名:</td>
+		<td><input type="text" placeholder="请输入用户名" id="cname"><span id="cname_span"></span></td>
+	</tr>
+	<tr>
+		<td>密码:</td>
+		<td>
+	<input type="text" id="cpwd"placeholder="请输入密码"><span id="cpwd_span"></span></td>
+	</tr>
+	<tr>
+		<td colspan="2"><button onclick="user_login()">登录</button></td>
+		
+	</tr></table>
+	
+	
+</body>
 </html>

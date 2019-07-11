@@ -1,27 +1,12 @@
 const express=require('express');
 const pool=require('../pool');
 var router=express();
-router.get("/login",function(req,res){
-  var $cname=req.query.cname;
-  var $cpwd=req.query.cpwd;
-  var $upwd=req.query.upwd;
-  var $phone=req.query.phone;
-  var $email=req.query.email;
-  if(!$cname){
-    res.send("用户名不存在");
-	return;
-  }if(!$cpwd){
-    res.send("密码不存在");
-	return;
+//登录
+router.get("/v1/login/:cname&:cpwd",function(req,res){
+  var $cname=req.params.cname;
+  var $cpwd=req.params.cpwd;
   
-  }if(!$phone){
-    res.send("电话号不存在");
-	return;
-  }if(!$email){
-    res.send("邮箱不存在不存在");
-	return;
-  }
-pool.query('SELECT cname,cpwd,phone,email FROM lovelycat WHERE cname=? AND cpwd=? AND phone=? AND email=?',[$cname,$cpwd,$phone,$email],function(err,result){
+pool.query('SELECT cname,cpwd FROM cat_user_login WHERE cname=? AND cpwd=?',[$cname,$cpwd],function(err,result){
   if(err) throw err;
   if(result.length>0){
   res.send("1");
@@ -29,5 +14,49 @@ pool.query('SELECT cname,cpwd,phone,email FROM lovelycat WHERE cname=? AND cpwd=
   res.send("0");
   }
 });
-})
+});
+//注册
+  router.post("/v1/reg/",function(req,res){
+   var obj=req.body;
+   console.log("1111");
+   var sql='insert into cat_user_login set ?'
+   pool.query(sql,[obj],function(err,result){
+     if(err) throw err;
+	 if(result.affectedRows>0){
+	   res.send("1");
+	   return;
+	 }else{
+	   res.send("0");
+	   return;
+	 }
+   })
+  })
+	   //查询用户名
+   router.get("/v1/reg_cname/:cname",function(req,res){
+     var $cname=req.params.cname;
+	 var sql="select cname from cat_user_login where cname=?"
+	 pool.query(sql,[$cname],function(err,result){
+	   if(err)throw err;
+	   if(result.length>0){
+	   res.send("1")
+	   }else{
+	   res.send("0")
+	   }
+	 })
+   })
+		 //用户修改
+    router.get("/v1/update/:cid",function(req,res){
+	  var $cid=req.params.cid;
+	  
+	  var sql="select * from cat_user_login where cid=?"
+	  pool.query(sql,[$cid],function(err,result){
+	  if(err)throw err;
+	  if(result.length>0){
+	    res.send("1");
+	  }else{
+	    res.send("0");
+	  }
+	  })
+	})
+
  module.exports=router;
