@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	function queryshow(){
+	var urlParams=new URLSearchParams(location.search);
+	var $cid=urlParams.get("cid");
+	 cid.value=$cid;
+	 console.log($cid);
+	 console.log("1111111");
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+	  if(xhr.readyState==4&&xhr.status==200){
+		  var result=xhr.responseText;
+			console.log(result);
+			if(result==0){
+			  alert("查询失败");
+				return;
+			}
+
+			var user=JSON.parse(result)[0];
+			console.log(user)
+       cname.value=user.cname;
+			 cpwd.value=user.cpwd;
+			 phone.value=user.phone;
+			 email.value=user.email;
+			 
+			 if(user.gender=="1"){
+			  m.checked="true"
+			 }if(user.gender=="0"){
+			  f.checked="true"
+			 }else{
+			 un.checked="true"
+}
+		}
+	}
+	xhr.open("get",`/user/v1/queryuser/+${$cid}`,true);
+	xhr.send();
+	}
+	
+
+function upshow(){
+
+	  var $cid=cid.value;
+    var $cname=cname.value;
+    var $cpwd=cpwd.value;
+    var $email=email.value;
+    var $phone=phone.value;
+		var $gender=null;
+		if(m.checked){
+		   $gender=1;
+		}else{
+		   $gender=0;
+		}
+var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			console.log(xhr.readyState)
+		  if(xhr.readyState==4&&xhr.status==200){
+			  var result=xhr.responseText;
+				if(result=="1"){alert("修改成功");
+				location.href="http://localhost:8080/user_update.html"
+				}else{
+				alert("修改失败");
+				}
+				}
+}
+xhr.open("put","/user/v1/upd/",true)
+ var formdata=`cname=${$cname}&cpwd=${$cpwd}&email=${$email}&phone=${$phone}&gender=${$gender}&cid=${$cid}`;
+ 
+xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		xhr.send(formdata);
+	
+	}
+	</script>
+</head>
+<body onload="queryshow()">
+	
+	<input type="text" id="cid"readonly><br>
+<input type="text" id="cname"><br>
+<input type="text" id="cpwd"><br>
+
+	<input type="text" id="email"><br>
+	<input type="text" id="phone"><br>
+	
+<!-- <input type="text" id="gender"><br> -->
+  <input type="radio"name="gender"id="m"><label for="m">帅哥</label>
+	<input type="radio"name="gender"id="f"><label for="f">美女</label>
+	<input type="radio"name="gender"id="un"><label for="un">保密</label>
+	<button onclick="upshow()">修改</button>
+	
+
+</body>
+</html>

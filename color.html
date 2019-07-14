@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+	  function getRandomColor(){
+		   var colorArr=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+			 var color="";
+			 for(var i=0;i<6;i++){
+			 color+=colorArr[
+			 Math.floor(Math.random()*15)];
+			 }
+			 return "#"+color;
+		}
+		var colors=getRandomColor();
+		var box=document.getElementById("box");
+		box.style.backgroundColor=colors;
+		box.style.width="200px";
+		box.style.height="300px";
+	</script>
+</body>
+</html>

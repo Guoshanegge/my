@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<script>
+	function user_update(){
+		console.log("11111")
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+	 if(xhr.readyState==4&&xhr.status==200){
+  console.log("11111")
+	 var result=xhr.responseText;
+	 var arr=JSON.parse(result);
+	 var stra=`<table border="1px">
+	<tr>
+		<td>编号</td>
+		<td>用户名</td>
+		<td>密码</td>
+		<td>手机号</td>
+		<td>邮箱</td>
+		<td>性别</td>
+    <td>操作</td>
+		</tr>
+		`
+		for(var i=0;i<arr.length;i++){
+		stra+=`<tr>
+		<td>${arr[i].cid}</td>
+		<td>${arr[i].cname}</td>
+		<td>${arr[i].cpwd}</td>
+		<td>${arr[i].phone}</td>
+    <td>${arr[i].email}</td>
+		<td>${arr[i].gender}</td>
+		<td><a href="user_up.html?cid=${arr[i].cid}">修改</a>/<a href="javascript:delect(${arr[i].cid})">删除</a></td>
+
+	</tr>`}
+		stra+=`</table>`
+		d1.innerHTML=stra;
+		
+	 }
+	}
+	xhr.open("get","/user/v1/update/",true);
+	xhr.send();
+	}
+	function delect($cid){
+	  
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+		  if(xhr.readyState==4&&xhr.status==200){
+			var result=xhr.responseText;
+			console.log(result);
+			if(result=="1"){
+			user_update();
+			}else{
+			alert("删除失败");
+			}
+			}
+		}
+		xhr.open("delete","/user/v1/deleteuser/"+$cid,true)
+		
+		xhr.send();
+	}
+	
+	</script>
+</head>
+<body onload="user_update()">
+
+	
+	
+<div id="d1"></div>
+<button>用户表</button>
+	
+</body>
+</html>
